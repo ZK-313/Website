@@ -1,0 +1,23 @@
+html {
+    /*background-image: url("https://wallpaperaccess.com/full/5170170.png");*/
+    background-color: #082c1c;
+    height: 100%; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url("./fonts/JuliettRegular-WyXyG.ttf");
+}
+#title {
+    text-align: center;
+    color: white;
+    font-family: myFirstFont;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
