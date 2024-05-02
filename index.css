@@ -1,23 +1,85 @@
 html {
     /*background-image: url("https://wallpaperaccess.com/full/5170170.png");*/
-    background-color: #082c1c;
+    background-color: var(--bg);
     height: 100%; 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+:root{
+    --bg: #082c1c;
+    --rbg: #3b0303;
+    --hov: #dd5771;
+}
+body{
+    height: 500vw;
+}
 @font-face {
     font-family: myFirstFont;
     src: url("./fonts/JuliettRegular-WyXyG.ttf");
+}
+nav {
+    text-align: center;
+    font-family: myFirstFont;
+    color: white;
+}
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+nav li a {
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav li a:hover {
+    color: var(--hov);
+    text-decoration:overline;
 }
 #title {
     text-align: center;
     color: white;
     font-family: myFirstFont;
+    font-size: 3vw;
+    padding: 0;
     display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+    justify-content: space-around;
+    list-style-type: none;
 }
+#headerstuff{
+    background-color: #082c1c;
+    padding-bottom: 0.1vh;
+    margin-bottom: 2vh;
+    padding-top: 0.1vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: myFirstFont;
+    color: var(--hov);
+    font-size: 50px;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+/*@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(5rem);
+    }
+}
+.scroll-text {
+    scroll-behavior: smooth;
+    animation: scroll 2s ease-in-out infinite;
+}*/
