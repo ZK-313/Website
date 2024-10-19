@@ -53,15 +53,24 @@ nav li a:hover {
     list-style-type: none;
 }
 #headerstuff{
-    background-color: #082c1c;
-    padding-bottom: 0.1vh;
+    /*background-color: #082c1c;*/
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    padding-bottom: 0.5vh;
     margin-bottom: 2vh;
-    padding-top: 0.1vh;
-    position: -webkit-sticky;
-    position: sticky;
+    padding-top: 0.5vh;
     top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 500px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
 }
 #content{
+    
     display: flex;
     flex-direction: column;
     text-align: center;
