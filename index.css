@@ -1,3 +1,4 @@
+
 html {
     /*background-image: url("https://wallpaperaccess.com/full/5170170.png");*/
     background-color: var(--bg);
@@ -5,14 +6,12 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    scroll-behavior: smooth;
 }
 :root{
     --bg: #082c1c;
     --rbg: #3b0303;
     --hov: #dd5771;
-}
-body{
-    height: 500vw;
 }
 @font-face {
     font-family: myFirstFont;
@@ -30,8 +29,10 @@ nav ul {
     list-style-type: none;
 }
 nav li a {
-    font-size: 20px;
+    /*font-size: 20px;*/
+    font-size: 1.3rem;
     text-decoration: none;
+    scroll-behavior: smooth;
     
 }
 a{
@@ -46,14 +47,15 @@ nav li a:hover {
     text-align: center;
     color: white;
     font-family: myFirstFont;
-    font-size: 3vw;
+    /*font-size: 3vw;*/
+    font-size: 2.2rem;
     padding: 0;
     display: flex;
     justify-content: space-around;
     list-style-type: none;
 }
 #headerstuff{
-    /*background-color: #082c1c;*/
+    /*background-color: #082c1c; */
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
     padding-bottom: 0.5vh;
@@ -62,9 +64,12 @@ nav li a:hover {
     top: 0;
     left: 0;
     right: 0;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 500px;
     position: fixed;
-    width: 100%;
+    /*width: 70%;*/
+    width: 70%;
     z-index: 10;
     transition: transform 0.3s ease-in-out;
     transform: translateY(0);
@@ -75,20 +80,118 @@ nav li a:hover {
     flex-direction: column;
     text-align: center;
     font-family: myFirstFont;
-    color: var(--hov);
-    font-size: 50px;
+    font-size: 1.5rem;
+    /*color: var(--hov);*/
+    color: white;
     margin-left: 4vw;
     margin-right: 4vw;
 }
-/*@keyframes scroll {
-    0% {
-        transform: translateY(0);
+
+/* Tablet and smaller screens */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
     }
-    100% {
-        transform: translateY(5rem);
+
+    nav li a {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    #title {
+        font-size: 5vw;
+    }
+
+    #content {
+        font-size: 40px;
+        margin-left: 2vw;
+        margin-right: 2vw;
     }
 }
-.scroll-text {
-    scroll-behavior: smooth;
-    animation: scroll 2s ease-in-out infinite;
-}*/
+
+/* Mobile screens  */
+@media only screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav li a {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    #title {
+        font-size: 7vw;
+    }
+
+    #content {
+        font-size: 30px;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    #headerstuff {
+        padding-bottom: 1vh;
+        padding-top: 1vh;
+        border-radius: 0;
+    }
+}
+
+
+
+
+
+
+#content {
+    margin-top: 100px; /* Space for fixed header */
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-list {
+    width: 30%;
+    padding: 10px;
+}
+
+.project-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project {
+    margin: 10px 0;
+}
+
+.project-link {
+    color: var(--hov);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-description {
+    width: 70%;
+    padding: 10px;
+    border-left: 2px solid var(--hov);
+    margin-left: 20px;
+}
+
+.project-description h4 {
+    margin-top: 0;
+}

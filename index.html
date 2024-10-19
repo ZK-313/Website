@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Zulfiqar Khan</title>
@@ -7,26 +7,6 @@
     </head>
     <body>
         <div id="headerstuff">
-
-<!--
-            <script>
-                let lastScrollTop = 0;
-const header = document.getElementById("headerstuff");
-
-window.addEventListener("scroll", function() {
-    let scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 50) {
-        // Scrolling down, hide the navbar
-        header.style.transform = "translateY(-100%)";
-    } else {
-        // Scrolling up, show the navbar
-        header.style.transform = "translateY(0)";
-    }
-
-    lastScrollTop = scrollTop;
-});
-            </script>-->
             <h1 id="title">Zulfiqar Khan</h1>
             <nav>
                 <ul>
@@ -41,4 +21,71 @@ window.addEventListener("scroll", function() {
             <p>More to come soon!</p>
         </div>
     </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zulfiqar Khan - Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div id="headerstuff">
+        <h1 id="title">Zulfiqar Khan</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am Zulfiqar Khan, an aspiring software engineer passionate about developing innovative solutions. I enjoy tackling diverse projects and continuously improving my skills.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-list">
+                    <h3>My Projects</h3>
+                    <ul id="project-names">
+                        <li class="project" data-description="Project 1: A web app for managing tasks.">
+                            <a href="#" class="project-link">Project 1</a>
+                        </li>
+                        <li class="project" data-description="Project 2: A mobile app for tracking fitness.">
+                            <a href="#" class="project-link">Project 2</a>
+                        </li>
+                        <li class="project" data-description="Project 3: An e-commerce website with payment integration.">
+                            <a href="#" class="project-link">Project 3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="project-description" id="description">
+                    <h4>Project Description</h4>
+                    <p>Select a project to see the description here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+</body>
 </html>
