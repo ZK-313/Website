@@ -181,15 +181,31 @@ aside {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
-
+.project-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .project-description {
     /*background-color: yellow;*/
+    /* display: flex; */
     width: 70%;
+    /* align-items: center; */
     padding: 10px;
     /* border-left: 2px solid var(--hov); */
     margin-left: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+}
+#project_name{
+    /* display: flex;
+    flex-direction: row; */
+    /* width: 80%; */
+}
+#git-img {
+    height: 40px;
+    width: 40px;
 }
 
 .project-description h4 {
