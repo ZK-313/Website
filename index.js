@@ -28,6 +28,22 @@ window.addEventListener("scroll", function() {
     lastScrollTop = scrollTop;
 });
 
+// function sendEmail(){
+//     const name = document.getElementById("name").value;
+//     const email = document.getElementById("email").value;
+//     const subject = document.getElementById("subject").value;
+//     const msg = document.getElementById("message").value;
+//     Email.send({
+//         SecureToken : "3b653b21-85b1-442b-badf-a20de4a34be7",
+//         To : 'zulfiqar991@hotmail.com',
+//         From : "zulfiqar991@gmail.com",
+//         Subject : name +", "+email+", "+subject,
+//         Body : msg
+//     }).then(
+//         message => alert(message)
+//     );
+// }
+
 
 function proj1(){
     const description = document.getElementById("project_info");

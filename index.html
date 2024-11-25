@@ -28,6 +28,8 @@
     <title>Zulfiqar Khan - Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+    
 </head>
 <body>
     <div id="headerstuff">
@@ -78,18 +80,41 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <form>
+            <form method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="subject" name = "subject" required></input>
                 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
+
                 
-                <button type="submit">Send</button>
+                
+                <button type="submit" onclick="sendEmail()">SEND</button>
+                
             </form>
+            <script type="text/javascript">
+                function sendEmail(){
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const subject = document.getElementById("subject").value;
+const msg = document.getElementById("message").value;
+Email.send({
+    SecureToken : "3b653b21-85b1-442b-badf-a20de4a34be7",
+    To : 'zulfiqar991@hotmail.com',
+    From : "zulfiqar991@gmail.com",
+    Subject : name +", "+email+", "+subject,
+    Body : msg
+}).then(
+    message => alert(message)
+);
+}
+            </script>
         </section>
     </div>
 </body>
