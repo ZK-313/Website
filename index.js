@@ -2,6 +2,7 @@ let lastScrollTop = 0;
 const header = document.getElementById("headerstuff");
 const content = document.getElementById("content");
 
+
  // Get the navbar height
 let headerHeight = header.offsetHeight;
  // Apply the height dynamically as padding to the body or content
@@ -28,22 +29,21 @@ window.addEventListener("scroll", function() {
     lastScrollTop = scrollTop;
 });
 
-// function sendEmail(){
-//     const name = document.getElementById("name").value;
-//     const email = document.getElementById("email").value;
-//     const subject = document.getElementById("subject").value;
-//     const msg = document.getElementById("message").value;
-//     Email.send({
-//         SecureToken : "3b653b21-85b1-442b-badf-a20de4a34be7",
-//         To : 'zulfiqar991@hotmail.com',
-//         From : "zulfiqar991@gmail.com",
-//         Subject : name +", "+email+", "+subject,
-//         Body : msg
-//     }).then(
-//         message => alert(message)
-//     );
-// }
-
+function sendEmail(){
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const msg = document.getElementById("message").value;
+    Email.send({
+        SecureToken : "3b653b21-85b1-442b-badf-a20de4a34be7",
+        To : 'zulfiqar991@gmail.com',
+        From : "contact@zulfiqark.com",
+        Subject : name +", "+email+", "+subject,
+        Body : msg
+    }).then(
+        message => alert("Email has been sent!"),
+    );
+    }
 
 function proj1(){
     const description = document.getElementById("project_info");
