@@ -49,7 +49,7 @@ function proj1(){
     const description = document.getElementById("project_info");
     document.getElementById("project_name").innerHTML = "Blackjack";
     description.innerHTML = "A simple blackjack game made in Python utilizing the tkinter library for GUI, and Pillow (PIL) to handle images. The game has a special ruleset which can be found in the 'rules' window which outlines how bets will be returned.";
-    document.getElementById("git-link").setAttribute("href","");
+    document.getElementById("git-link").setAttribute("href","https://github.com/ZK-313/blackjack");
     //description.innerHTML = description.innerHTML + "<iframe src=\"https://replit.com/@ZulfiqarK/Blackjack-tkinta5?lite=1&outputonly=1\" width=\"600\" height=\"400\"></iframe>";
 }
 function proj2(){
