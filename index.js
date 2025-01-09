@@ -59,3 +59,10 @@ function proj2(){
     document.getElementById("git-link").setAttribute("href","https://github.com/ZK-313/Todo-list-CLI");
     //description.innerHTML = description.innerHTML + "<iframe src=\"https://replit.com/@ZulfiqarK/Blackjack-tkinta5?lite=1&outputonly=1\" width=\"600\" height=\"400\"></iframe>";
 }
+function proj3(){
+    const description = document.getElementById("project_info");
+    document.getElementById("project_name").innerHTML = "C# Social Media Platform";
+    description.innerHTML = "An Object Oriented social media platform written in C#. This is an ongoing project, and currently implements user logins, posts, comments, replies, and notifications. In the future, I want to expand this project to include a frontend as a website.";
+    document.getElementById("git-link").setAttribute("href","https://github.com/ZK-313/Social-Media-Platform");
+    //description.innerHTML = description.innerHTML + "<iframe src=\"https://replit.com/@ZulfiqarK/Blackjack-tkinta5?lite=1&outputonly=1\" width=\"600\" height=\"400\"></iframe>";
+}

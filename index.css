@@ -115,6 +115,21 @@ form button:hover{
     margin-left: 4vw;
     margin-right: 4vw;
 }
+#about-and-langs{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+#about{
+    width: 80%;
+}
+#languages{
+    width: 20%;
+
+}
+#languages ul {
+    text-align: left;
+}
 
 /* Tablet and smaller screens */
 @media only screen and (max-width: 768px) {
