@@ -66,3 +66,11 @@ function proj3(){
     document.getElementById("git-link").setAttribute("href","https://github.com/ZK-313/Social-Media-Platform");
     //description.innerHTML = description.innerHTML + "<iframe src=\"https://replit.com/@ZulfiqarK/Blackjack-tkinta5?lite=1&outputonly=1\" width=\"600\" height=\"400\"></iframe>";
 }
+function proj4(){
+    const description = document.getElementById("project_info");
+    document.getElementById("project_name").innerHTML = "Wordle Copy";
+    description.innerHTML = "A fully functional copy of wordle written in p5.js JavaScript. The app uses a list of five letter words, selects one at random, and allows you to guess words, giving feedback as to how correct each guess was.";
+    description.innerHTML = description.innerHTML + "<br><iframe src=\"https://editor.p5js.org/zulfiqar.khan/full/aJ55kQu72\" width=\"500\" height=\"500\"></iframe>";
+    document.getElementById("git-link").setAttribute("href","https://github.com/ZK-313/zordle");
+    //description.innerHTML = description.innerHTML + "<iframe src=\"https://replit.com/@ZulfiqarK/Blackjack-tkinta5?lite=1&outputonly=1\" width=\"600\" height=\"400\"></iframe>";
+}
