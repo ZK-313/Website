@@ -1,0 +1,48 @@
+/* index.css */
+@import "tailwindcss";
+@import "tailwindcss/preflight"
+
+@tailwind utilities;
+
+@font-face {
+    font-family: myFirstFont;
+    /* src: url("./fonts/JuliettRegular-WyXyG.ttf"); */
+    src:url("./fonts/Inter-VariableFont_opsz,wght.ttf")
+}
+
+@theme {
+  --font-inter: "myFirstFont", sans-serif; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html, body, #root {
+  height: 100%;
+  background: #0c0c0c;
+}
+
+
+
+.stars {
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 
+    50px 100px white,
+    200px 300px white,
+    400px 600px white,
+    800px 150px white,
+    1200px 500px white,
+    1600px 700px white,
+    300px 800px white,
+    900px 400px white,
+    1300px 200px white,
+    1700px 600px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to   { opacity: 1; }
+}
