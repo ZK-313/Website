@@ -1,0 +1,123 @@
+/* index.css */
+@import "tailwindcss";
+@import "tailwindcss/preflight"
+
+@tailwind utilities;
+
+@theme {
+  --font-inter: "JetBrains Mono", monospace; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+  scroll-padding-top: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0c0c0c;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Smooth scrolling improvements */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  /* Better scroll performance */
+  will-change: scroll-position;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth momentum scrolling for better feel */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: inherit;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #9333ea, #ec4899, #fbbf24);
+  border-radius: 6px;
+  border: 2px solid #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a855f7, #f472b6, #fcd34d);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea #0c0c0c;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(147, 51, 234, 0.3);
+  color: #ffffff;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 
+    50px 100px white,
+    200px 300px white,
+    400px 600px white,
+    800px 150px white,
+    1200px 500px white,
+    1600px 700px white,
+    300px 800px white,
+    900px 400px white,
+    1300px 200px white,
+    1700px 600px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to   { opacity: 1; }
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(147, 51, 234, 0.5);
+  outline-offset: 2px;
+}

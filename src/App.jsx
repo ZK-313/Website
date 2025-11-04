@@ -48,7 +48,7 @@
 // export default App;
 
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Starfield from "./components/Starfield";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -58,25 +58,33 @@ import Contact from "./components/Contact";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const current = window.scrollY;
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const current = window.scrollY;
 
-      if (current > window.innerHeight * 0.6) {
-        if (current > lastScrollY) setShowNavbar(true);   // scrolling down
-        else setShowNavbar(false);                        // scrolling up
-      } else {
-        setShowNavbar(false);
+          if (current > window.innerHeight * 0.6) {
+            if (current > lastScrollY.current) setShowNavbar(true);   // scrolling down
+            else setShowNavbar(false);                        // scrolling up
+          } else {
+            setShowNavbar(false);
+          }
+
+          lastScrollY.current = current;
+          ticking.current = false;
+        });
+
+        ticking.current = true;
       }
-
-      setLastScrollY(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <div className="relative">
