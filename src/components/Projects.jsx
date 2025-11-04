@@ -1,71 +1,3 @@
-// import { useState } from "react";
-
-// const projects = [
-//   {
-//     name: "Blackjack",
-//     description: "A simple blackjack game made in Python utilizing the tkinter library for GUI, and Pillow (PIL) to handle images. The game has a special ruleset which can be found in the 'rules' window which outlines how bets will be returned.",
-//     image: "https://via.placeholder.com/400x250",
-//   },
-//   {
-//     name: "Todo-List CLI / App",
-//     description: "A simple Java command line interface to simulate a todo list. Allows users to add and remove tasks, along with mark them as done and incomplete. All commands can be found by typing 'todo -h' in the terminal. There is also a frontend app for Windows users who choose to use it, made using HTML, css, and javascript, all powered by ElectronJS.",
-//     image: "https://via.placeholder.com/400x250",
-//   },
-//   {
-//     name: "C# Social Media Platform",
-//     description: "An Object Oriented social media platform written in C#. This is an ongoing project, and currently implements user logins, posts, comments, replies, and notifications. In the future, I want to expand this project to include a frontend as a website.",
-//     image: "https://via.placeholder.com/400x250",
-//   },
-//   {
-//     name: "Wordle Copy",
-//     description: "A fully functional copy of wordle written in p5.js JavaScript. The app uses a list of five letter words, selects one at random, and allows you to guess words, giving feedback as to how correct each guess was.",
-//     image: "https://via.placeholder.com/400x250",
-//   },
-// ];
-
-// export default function Projects() {
-//   const [selected, setSelected] = useState(projects[0]);
-
-//   return (
-//     <section
-//       id="projects"
-//       className="min-h-screen flex items-center justify-center px-8 py-16"
-//     >
-//       <div className="bg-[#0c0c0c]/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg w-full">
-//         <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 mb-10 text-center">
-//           Projects
-//         </h2>
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-//           <div className="flex flex-col gap-4">
-//             {projects.map((proj) => (
-//               <button
-//                 key={proj.name}
-//                 onClick={() => setSelected(proj)}
-//                 className={`p-3 rounded-lg text-left transition ${
-//                   selected.name === proj.name
-//                     ? "bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black"
-//                     : "bg-gray-800/80 hover:bg-gray-700/80 text-gray-200"
-//                 }`}
-//               >
-//                 {proj.name}
-//               </button>
-//             ))}
-//           </div>
-//           <div className="bg-gray-900/80 p-6 rounded-lg">
-//             <img
-//               src={selected.image}
-//               alt={selected.name}
-//               className="mb-4 rounded"
-//             />
-//             <h3 className="text-2xl font-semibold mb-2">{selected.name}</h3>
-//             <p className="text-gray-300">{selected.description}</p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -82,14 +14,14 @@ const projects = [
     description: "A simple Java command line interface to simulate a todo list. Allows users to add and remove tasks, along with mark them as done and incomplete. All commands can be found by typing 'todo -h' in the terminal. There is also a frontend app for Windows users who choose to use it, made using HTML, css, and javascript, all powered by ElectronJS.",
     image: "",
     tech: ["Java", "ElectronJS", "JavaScript"],
-    githubUrl: "",
+    githubUrl: "https://github.com/ZK-313/Todo-list-CLI",
   },
   {
     name: "C# Social Media Platform",
     description: "An Object Oriented social media platform written in C#. This is an ongoing project, and currently implements user logins, posts, comments, replies, and notifications. In the future, I want to expand this project to include a frontend as a website.",
     image: "",
     tech: ["C#", ".NET"],
-    githubUrl: "",
+    githubUrl: "https://github.com/ZK-313/Social-Media-Platform",
   },
   {
     name: "Wordle Copy",
@@ -97,7 +29,7 @@ const projects = [
     image: "",
     embedUrl: "https://editor.p5js.org/zulfiqar.khan/full/aJ55kQu72",
     tech: ["JavaScript", "p5.js"],
-    githubUrl: "",
+    githubUrl: "https://github.com/ZK-313/Zordle",
   },
   {
     name: "Val Stocks",
