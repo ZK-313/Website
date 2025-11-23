@@ -17,7 +17,7 @@ export default function Navbar({ show }) {
           className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
         >
           <div className="bg-[#1a1a1a]/90 backdrop-blur-xl border border-gray-700/30 shadow-2xl shadow-purple-500/10 px-6 md:px-10 py-3 rounded-full flex gap-6 md:gap-10 justify-center items-center w-fit min-w-[280px]">
-            {["about", "projects", "contact"].map((item, index) => (
+            {["about", "education", "experience", "projects", "contact"].map((item, index) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, scale: 0.8 }}
