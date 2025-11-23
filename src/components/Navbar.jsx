@@ -9,10 +9,11 @@ export default function Navbar({ show }) {
     <AnimatePresence>
       {show && (
         <motion.nav
-          initial={{ opacity: 0, y: -50 }}
+          key="navbar"
+          initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
         >
           <div className="bg-[#1a1a1a]/90 backdrop-blur-xl border border-gray-700/30 shadow-2xl shadow-purple-500/10 px-6 md:px-10 py-3 rounded-full flex gap-6 md:gap-10 justify-center items-center w-fit min-w-[280px]">
