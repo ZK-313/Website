@@ -1,7 +1,10 @@
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import ResumeModal from "./ResumeModal";
 
 export default function Navbar({ show }) {
+  const [showResumeModal, setShowResumeModal] = useState(false);
   return (
     <AnimatePresence>
       {show && (
@@ -32,9 +35,22 @@ export default function Navbar({ show }) {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <button
+                onClick={() => setShowResumeModal(true)}
+                className="px-4 py-2 text-sm md:text-base font-medium bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black rounded-full hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105 transition-all duration-300"
+              >
+                Resume
+              </button>
+            </motion.div>
           </div>
         </motion.nav>
       )}
+      <ResumeModal isOpen={showResumeModal} onClose={() => setShowResumeModal(false)} />
     </AnimatePresence>
   );
 }

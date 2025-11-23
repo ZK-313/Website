@@ -50,11 +50,12 @@ export default function About() {
               Hello! I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Zulfiqar Khan</span>, an aspiring software engineer passionate about developing innovative solutions. I enjoy tackling diverse projects and continuously improving my skills.
             </p>
             <p className="mb-4">
-              Currently I am <span className="text-yellow-400 font-semibold">proficient</span> in <span className="text-purple-400">Python</span> and <span className="text-purple-400">Java</span>, and I am <span className="text-pink-400 font-semibold">well-versed</span> in <span className="text-purple-400">JavaScript</span>, <span className="text-purple-400">C#</span>, <span className="text-purple-400">C++</span>, and <span className="text-purple-400">RISC-V Assembly</span>. I am also <span className="text-yellow-400 font-semibold">learning</span> <span className="text-purple-400">Rust</span> and <span className="text-purple-400">C</span> to further broaden my knowledge in programming.
+              Currently I am <span className="text-yellow-400 font-semibold">proficient</span> in <span className="text-purple-400">Python</span>, <span className="text-purple-400">Java</span>, and <span className="text-purple-400">C</span>,and I am <span className="text-pink-400 font-semibold">well-versed</span> in <span className="text-purple-400">JavaScript</span>, <span className="text-purple-400">C#</span>, <span className="text-purple-400">C++</span>, and <span className="text-purple-400">RISC-V Assembly</span>. I am also <span className="text-yellow-400 font-semibold">learning</span> <span className="text-purple-400">Rust</span> to further broaden my knowledge in programming.
             </p>
             <p>
-              I am interested in creating many different types of apps including video games, but I am also quite interested in <span className="text-pink-400 font-semibold">Cyber Security</span> and <span className="text-pink-400 font-semibold">backend development</span>.
+              I am especially well-versed in <span className="text-pink-400 font-semibold">backend development</span> and <span className="text-pink-400 font-semibold">embedded software</span>.
             </p>
+            <p>I have worked with several backend frameworks to upkeep enterprise level APIs, including <span className="text-purple-400">Spring Boot</span> and <span className="text-purple-400">ASP.NET</span>.</p>
           </motion.div>
 
           <motion.div
