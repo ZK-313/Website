@@ -56,6 +56,9 @@ export default function About() {
               I am especially well-versed in <span className="text-pink-400 font-semibold">backend development</span> and <span className="text-pink-400 font-semibold">embedded software</span>.
             </p>
             <p>I have worked with several backend frameworks to upkeep enterprise level APIs, including <span className="text-purple-400">Spring Boot</span> and <span className="text-purple-400">ASP.NET</span>.</p>
+            <p>
+              I want to build a career in <span className="text-pink-400 font-semibold">backend development</span>, creating systems that are fast, reliable, and scalable behind the scenes. I enjoy designing APIs, working with databases, and building the infrastructure that powers real applications. My goal is to develop backend systems that are clean, efficient, and able to support real-world products and users at scale.
+            </p>
           </motion.div>
 
           <motion.div
