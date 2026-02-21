@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import resumePdf from "../assets/Zulfiqar Khan Software Engineering Resume.pdf";
+import resumePdf from "../assets/Zulfiqar Khan Resume 2026.pdf";
 
 export default function ResumeModal({ isOpen, onClose }) {
   const [isVerified, setIsVerified] = useState(false);

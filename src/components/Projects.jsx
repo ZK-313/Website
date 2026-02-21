@@ -3,6 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
+    name: "Val Stocks",
+    description: "A Spring Boot app that creates a stock market simulation where stocks are the performances of Valorant players. Uses a complex algorithm to define stock values based on performances. The site also implements a rest API to access and manipulate stock data.",
+    image: "",
+    tech: ["Java", "Spring Boot", "MySQL", "API Calls"],
+    githubUrl: "https://val.zulfiqar.xyz/",
+  },
+  {
+    name: "Stock Backtesting & Analysis Tool",
+    description: "A quantitative finance research tool built in Python that implements a moving average crossover strategy, evaluates performance through rigorous statistical analysis, and simulates future market scenarios through Monte Carlo simulations.",
+    image: "",
+    tech: ["Python", "Quantitative Finance", "Monte Carlo Simulation"],
+    githubUrl: "https://github.com/ZK-313/stock-backtester",
+  },
+  {
     name: "Blackjack",
     description: "A simple blackjack game made in Python utilizing the tkinter library for GUI, and Pillow (PIL) to handle images. The game has a special ruleset which can be found in the 'rules' window which outlines how bets will be returned.",
     image: "",
@@ -31,13 +45,6 @@ const projects = [
     tech: ["JavaScript", "p5.js"],
     githubUrl: "https://github.com/ZK-313/Zordle",
   },
-  {
-    name: "Val Stocks",
-    description: "A Spring Boot app that creates a stock market simulation where stocks are the performances of Valorant players. Uses a complex algorithm to define stock values based on performances. The site also implements a rest API to access and manipulate stock data.",
-    image: "",
-    tech: ["Java", "Spring Boot", "MySQL", "API Calls"],
-    githubUrl: "https://val.zulfiqar.xyz/",
-  },
 ];
 
 export default function Projects() {
@@ -65,8 +72,8 @@ export default function Projects() {
           >
             Projects
           </motion.h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
-            <div className="flex flex-col gap-3 md:gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-start min-w-0">
+            <div className="flex flex-col gap-3 md:gap-4 max-h-[70vh] overflow-y-auto overflow-x-hidden pr-1 lg:pr-2 min-w-0">
               {projects.map((proj, index) => (
                 <motion.button
                   key={proj.name}
@@ -75,13 +82,13 @@ export default function Projects() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setSelected(proj)}
-                  className={`p-4 rounded-xl text-left transition-all duration-300 relative overflow-hidden ${
+                  className={`p-4 rounded-xl text-left transition-all duration-300 relative overflow-hidden min-w-0 ${
                     selected.name === proj.name
-                      ? "bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black shadow-lg shadow-purple-500/30 scale-105"
+                      ? "bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black shadow-lg shadow-purple-500/30"
                       : "bg-gray-800/60 hover:bg-gray-700/80 text-gray-200 border border-gray-700/50 hover:border-gray-600/50"
                   }`}
                 >
-                  <span className="relative z-10 font-semibold text-base md:text-lg">
+                  <span className="relative z-10 font-semibold text-base md:text-lg break-words">
                     {proj.name}
                   </span>
                   {selected.name === proj.name && (
@@ -101,7 +108,7 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gray-900/60 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 shadow-xl"
+                className="bg-gray-900/60 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 shadow-xl min-w-0"
               >
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-2xl md:text-3xl font-bold text-white">

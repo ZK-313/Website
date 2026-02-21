@@ -25,7 +25,8 @@ html, body {
 }
 
 html {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -34,11 +35,7 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Smooth scrolling improvements */
-  overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
-  /* Better scroll performance */
-  will-change: scroll-position;
 }
 
 #root {
