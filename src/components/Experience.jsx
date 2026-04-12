@@ -2,17 +2,32 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    title: "Full-Stack Developer Intern, Cash Management Technology",
+    company: "Scotiabank",
+    location: "Toronto, ON",
+    period: "Winter 2026",
+    description: "Worked within the Cash Management Technology division on a cross-functional Agile team, delivering full-stack improvements across both the React frontend and Java backend. Focused heavily on modernizing a large legacy codebase and improving the overall health and security of the platform.",
+    responsibilities: [
+      "Refactored a large legacy backend codebase into 8+ modular Spring Boot microservices, reducing inter-service coupling and improving deployment independence",
+      "Upgraded Spring Boot across 5+ microservices to the latest stable version, resolving 20+ breaking API changes and eliminating deprecated dependency usage",
+      "Audited and remediated 50+ dependency vulnerabilities across the project, reducing critical and high-severity CVEs to zero in the production environment",
+      "Resolved frontend and backend defects through Jira ticket workflows, consistently meeting sprint SLAs and reducing the team's open bug backlog",
+      "Participated in Agile ceremonies across sprints, contributing to backlog refinement and delivering all assigned tickets on schedule",
+    ],
+    technologies: ["Java", "Spring Boot", "React", "Microservices", "Jira", "Agile"],
+  },
+  {
     title: "Software Engineering Intern",
     company: "Scotiabank",
     location: "Toronto, ON",
     period: "Fall 2025",
     description: "Helped develop and maintain backend APIs for web applications in spring boot. Created production level endpoints and services for the application. Also implemented Python scripts to automate processes.",
     responsibilities: [
-      "Developed RESTful APIs using Spring Boot and Java",
-      "Implemented Python scripts to automate many process to save the organization money",
-      "Optimized data collection and processing using websockets",
-      "Optimized dependency management in gradle",
-      "Collaborated with many managers and engineers to deliver helpful and useful processes",
+      "Designed and shipped 10+ production RESTful API endpoints in Spring Boot, supporting real-time data access for internal banking workflows",
+      "Wrote Python automation scripts to replace manual CSV upload workflows, saving the organization $100,000+ in operational costs annually",
+      "Optimized WebSocket-based data collection pipelines, improving throughput and reducing latency for live data processing",
+      "Centralized Gradle dependency management by introducing a shared TOML version catalog across all projects, enabling seamless version upgrades and eliminating redundant dependency declarations per project",
+      "Collaborated with engineers and managers across multiple teams to define requirements and deliver reliable backend tooling",
     ],
     technologies: ["Java", "Spring Boot", "Python", "WebSockets", "SQL", "Docker"],
   },
@@ -71,7 +86,7 @@ export default function Experience() {
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     className="mt-4 md:mt-0"
                   >
-                    <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-yellow-400/20 text-gray-200 rounded-full border border-purple-500/30 text-sm md:text-base font-medium">
+                    <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-yellow-400/20 text-gray-200 rounded-full border border-purple-500/30 text-sm md:text-base font-medium whitespace-nowrap">
                       {exp.period}
                     </span>
                   </motion.div>

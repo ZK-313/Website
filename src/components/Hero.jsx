@@ -22,9 +22,6 @@ export default function Hero() {
 
   // gradient animates from left to right as you scroll - colors flow across the name
   const bgPosition = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0.3]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   useEffect(() => {
     const currentText = texts[currentIndex];
@@ -75,7 +72,6 @@ export default function Hero() {
       
       <div className="sticky top-0 flex flex-col items-start justify-center h-screen px-8 md:px-16 lg:px-24">
         <motion.div
-          style={{ opacity, scale, y }}
           className="space-y-6 md:space-y-8"
         >
           <motion.h1
@@ -89,7 +85,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             {displayText}
-            <span className={`inline-block w-0.5 h-[0.9em] ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'}`} style={{ 
+            <span className={`inline-block w-0.5 h-[0.9em] ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'}`} style={{
               background: 'linear-gradient(to right, rgb(168, 85, 247), rgb(236, 72, 153), rgb(251, 191, 36))',
               transition: 'opacity 0.3s ease'
             }}>|</span>

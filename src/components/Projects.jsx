@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
@@ -49,6 +49,14 @@ const projects = [
 
 export default function Projects() {
   const [selected, setSelected] = useState(projects[0]);
+  const detailRef = useRef(null);
+
+  const handleSelect = (proj) => {
+    setSelected(proj);
+    if (window.innerWidth < 1024 && detailRef.current) {
+      setTimeout(() => detailRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+    }
+  };
 
   return (
     <section
@@ -81,7 +89,7 @@ export default function Projects() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setSelected(proj)}
+                  onClick={() => handleSelect(proj)}
                   className={`p-4 rounded-xl text-left transition-all duration-300 relative overflow-hidden min-w-0 ${
                     selected.name === proj.name
                       ? "bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black shadow-lg shadow-purple-500/30"
@@ -104,6 +112,7 @@ export default function Projects() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected.name}
+                ref={detailRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}

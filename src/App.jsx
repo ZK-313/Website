@@ -57,6 +57,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -95,10 +96,11 @@ function App() {
         <Navbar show={showNavbar} />
         <Hero />
         <About />
-        <Education />
         <Experience />
+        <Education />
         <Projects />
         <Contact />
+        <Footer />
       </main>
     </div>
   );

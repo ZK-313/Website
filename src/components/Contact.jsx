@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 export default function Contact() {
@@ -8,6 +8,12 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [toast, setToast] = useState(null); // { type: "success" | "error", message: string }
+
+  const showToast = (type, message) => {
+    setToast({ type, message });
+    setTimeout(() => setToast(null), 4000);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -18,7 +24,7 @@ export default function Contact() {
 
   const sendEmail = () => {
     if (typeof Email === 'undefined') {
-      alert("Email service is not loaded yet. Please try again in a moment.");
+      showToast("error", "Email service is not loaded yet. Please try again in a moment.");
       return;
     }
     const name = document.getElementById("name").value;
@@ -31,9 +37,14 @@ export default function Contact() {
       From: "contact@zulfiqark.com",
       Subject: name + ", " + email + ", " + subject,
       Body: msg
-    }).then(
-      message => alert("Email has been sent!"),
-    );
+    }).then((message) => {
+      if (message === "OK") {
+        showToast("success", "Message sent! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        showToast("error", "Something went wrong. Please try again.");
+      }
+    });
   };
 
   const handleSubmit = (e) => {
@@ -155,6 +166,24 @@ export default function Contact() {
           </motion.button>
         </form>
         
+        <AnimatePresence>
+          {toast && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className={`mt-4 px-4 py-3 rounded-xl text-sm font-medium text-center border ${
+                toast.type === "success"
+                  ? "bg-green-500/10 border-green-500/30 text-green-400"
+                  : "bg-red-500/10 border-red-500/30 text-red-400"
+              }`}
+            >
+              {toast.message}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

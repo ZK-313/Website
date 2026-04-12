@@ -13,6 +13,7 @@ const languages = [
   "Verilog",
   "Rust",
   "C",
+  "MATLAB",
 ];
 
 export default function About() {
@@ -46,18 +47,14 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base md:text-lg text-gray-300 leading-relaxed space-y-4 text-left"
           >
-            <p className="mb-4">
-              Hello! I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Zulfiqar Khan</span>, an aspiring software engineer passionate about developing innovative solutions. I enjoy tackling diverse projects and continuously improving my skills.
-            </p>
-            <p className="mb-4">
-              Currently I am <span className="text-yellow-400 font-semibold">proficient</span> in <span className="text-purple-400">Python</span>, <span className="text-purple-400">Java</span>, and <span className="text-purple-400">C</span>, and I am <span className="text-pink-400 font-semibold">well-versed</span> in <span className="text-purple-400">JavaScript</span>, <span className="text-purple-400">C#</span>, <span className="text-purple-400">C++</span>, and <span className="text-purple-400">RISC-V Assembly</span>. I am also <span className="text-yellow-400 font-semibold">learning</span> <span className="text-purple-400">Rust</span> to further broaden my knowledge in programming.
+            <p>
+              Hello! 👋 <br></br> <br></br>I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Zulfiqar Khan</span>, a software engineer with a focus on <span className="text-pink-400 font-semibold">backend development</span> and <span className="text-pink-400 font-semibold">embedded software</span>. I have professional experience building and maintaining enterprise-level APIs using <span className="text-purple-400">Spring Boot</span> and <span className="text-purple-400">ASP.NET</span>, and I care deeply about writing systems that are clean, efficient, and built to scale.
             </p>
             <p>
-              I am especially well-versed in <span className="text-pink-400 font-semibold">backend development</span> and <span className="text-pink-400 font-semibold">embedded software</span>.
+              Outside of work, I am independently studying <span className="text-pink-400 font-semibold">guidance systems</span> and <span className="text-pink-400 font-semibold">avionics</span> which are areas that sit at the intersection of software, control theory, and aerospace. I find the engineering challenges in defence and aerospace very interesting, particularly the reliability and precision demands that those systems require.
             </p>
-            <p>I have worked with several backend frameworks to upkeep enterprise level APIs, including <span className="text-purple-400">Spring Boot</span> and <span className="text-purple-400">ASP.NET</span>.</p>
             <p>
-              I want to build a career in <span className="text-pink-400 font-semibold">backend development</span>, creating systems that are fast, reliable, and scalable behind the scenes. I enjoy designing APIs, working with databases, and building the infrastructure that powers real applications. My goal is to develop backend systems that are clean, efficient, and able to support real-world products and users at scale.
+              I am also picking up <span className="text-purple-400">MATLAB</span> to support my study of guidance systems and control theory.
             </p>
           </motion.div>
 
