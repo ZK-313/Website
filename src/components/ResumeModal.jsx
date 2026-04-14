@@ -2,58 +2,53 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import resumePdf from "../assets/Zulfiqar Khan Resume 2026.pdf";
 
+const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
 export default function ResumeModal({ isOpen, onClose }) {
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(isLocalhost);
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const widgetIdRef = useRef(null);
   const containerRef = useRef(null);
 
   // Load reCAPTCHA script
   useEffect(() => {
-    if (isOpen && !recaptchaLoaded) {
-      // Check if script already exists
-      if (document.querySelector('script[src*="recaptcha"]')) {
-        if (window.grecaptcha && window.grecaptcha.ready) {
-          window.grecaptcha.ready(() => setRecaptchaLoaded(true));
-        } else {
-          setRecaptchaLoaded(true);
-        }
-        return;
-      }
+    if (isLocalhost || !isOpen || recaptchaLoaded) return;
 
-      const script = document.createElement("script");
-      script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        if (window.grecaptcha && window.grecaptcha.ready) {
-          window.grecaptcha.ready(() => setRecaptchaLoaded(true));
-        } else {
-          setRecaptchaLoaded(true);
-        }
-      };
-      document.body.appendChild(script);
+    if (document.querySelector('script[src*="recaptcha"]')) {
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        window.grecaptcha.ready(() => setRecaptchaLoaded(true));
+      } else {
+        setRecaptchaLoaded(true);
+      }
+      return;
     }
+
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        window.grecaptcha.ready(() => setRecaptchaLoaded(true));
+      } else {
+        setRecaptchaLoaded(true);
+      }
+    };
+    document.body.appendChild(script);
   }, [isOpen, recaptchaLoaded]);
 
   // Render reCAPTCHA widget
   useEffect(() => {
     if (isOpen && recaptchaLoaded && containerRef.current && !widgetIdRef.current) {
       setIsVerified(false);
-      
+
       if (window.grecaptcha && window.grecaptcha.render) {
         try {
           widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
             sitekey: "6Ldf2RUsAAAAAAr7lpy85AjuUJjpnG3VD7-65zxR",
-            callback: (token) => {
-              setIsVerified(true);
-            },
-            "expired-callback": () => {
-              setIsVerified(false);
-            },
-            "error-callback": () => {
-              setIsVerified(false);
-            },
+            callback: () => setIsVerified(true),
+            "expired-callback": () => setIsVerified(false),
+            "error-callback": () => setIsVerified(false),
           });
         } catch (error) {
           console.error("reCAPTCHA render error:", error);
@@ -78,15 +73,14 @@ export default function ResumeModal({ isOpen, onClose }) {
   }, [isOpen]);
 
   const handleDownload = () => {
-    if (isVerified) {
-      const link = document.createElement("a");
-      link.href = resumePdf;
-      link.download = "Zulfiqar_Khan_Software_Engineering_Resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      onClose();
-    }
+    if (!isVerified) return;
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Zulfiqar_Khan_Software_Engineering_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -102,7 +96,7 @@ export default function ResumeModal({ isOpen, onClose }) {
       >
         {/* Backdrop */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-        
+
         {/* Modal */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -137,14 +131,18 @@ export default function ResumeModal({ isOpen, onClose }) {
             <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-center">
               Download Resume
             </h2>
-            
-            <p className="text-gray-300 text-center text-sm md:text-base">
-              Please verify you're human to download the resume.
-            </p>
 
-            <div className="flex justify-center">
-              <div ref={containerRef} id="recaptcha-container" />
-            </div>
+            {!isLocalhost && (
+              <>
+                <p className="text-gray-300 text-center text-sm md:text-base">
+                  Please verify you're human to download the resume.
+                </p>
+
+                <div className="flex justify-center">
+                  <div ref={containerRef} id="recaptcha-container" />
+                </div>
+              </>
+            )}
 
             <motion.button
               onClick={handleDownload}
@@ -165,4 +163,3 @@ export default function ResumeModal({ isOpen, onClose }) {
     </AnimatePresence>
   );
 }
-
